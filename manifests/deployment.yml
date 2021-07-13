@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "kubernetescluster-e3ac"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "kubernetescluster-e3ac"
+  template:
+    metadata:
+      labels:
+        app: "kubernetescluster-e3ac"
+    spec:
+      containers:
+        - name: "kubernetescluster-e3ac"
+          image: "mycontainerregistry9090.azurecr.io/kubernetescluster"
+          ports:
+          - containerPort: 80
